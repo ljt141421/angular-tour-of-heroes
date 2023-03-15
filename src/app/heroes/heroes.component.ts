@@ -10,7 +10,7 @@ import {MessageService} from "../message.service";
 })
 export class HeroesComponent implements OnInit{
   heroes: Hero[] = [];
-  selectedHero?: Hero; //选择的英雄
+  //selectedHero?: Hero; //选择的英雄
   constructor(private heroService: HeroService,
               private messageService: MessageService) {}
 
@@ -23,10 +23,10 @@ export class HeroesComponent implements OnInit{
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
-  onSelect(hero: Hero): void{
-      this.selectedHero = hero;
-      this.messageService.addMessage(`HeroesComponent: Selected hero id: ${hero.id}`);
-  }
+  // onSelect(hero: Hero): void{
+  //     this.selectedHero = hero;
+  //     this.messageService.addMessage(`HeroesComponent: Selected hero id: ${hero.id}`);
+  // }
 
 
 }
