@@ -28,6 +28,4 @@ export class HeroSearchComponent implements OnInit{
     this.searchTerms.next(term);
   }
 
-
-
 }

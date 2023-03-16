@@ -1,4 +1,11 @@
 <h2>My Heroes</h2>
+
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+  <button type="button" class="add-button" (click)="add(heroName.value);heroName.value=''">Add Hero</button>
+</div>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
       <a routerLink="/detail/{{hero.id}}">
@@ -7,23 +14,5 @@
       <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
-
-<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
-  <button type="button" class="add-button" (click)="add(heroName.value);heroName.value=''">Add Hero</button>
-</div>
-
-<!--  通过[hero]="xxx"的方式向子组件传值
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
-      <span class="badge">{{hero.id}}</span>
-      <span class="name">{{hero.name}}</span>
-    </button>
-  </li>
-</ul>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
--->
 
 

@@ -26,8 +26,6 @@ export class HeroService {
         tap(_ => this.log('fetched heroes')),
         catchError(this.handleError('getHeroes', []))
       );
-    // const heroes = of(HEROES);
-    // return heroes;
   }
 
   private handleError<T> (operation = 'operation', result?: T){
@@ -45,9 +43,6 @@ export class HeroService {
         tap(_ => this.log(`fetched hero id = ${id}`)),
         catchError(this.handleError<Hero>(`getHero id = ${id}`))
       );
-    // const hero = HEROES.find(h => h.id === id)!
-    // this.log(`HeroService: fetched hero id = ${id}`)
-    // return of(hero);
   }
 
   updateHero(hero: Hero): Observable<any> {
